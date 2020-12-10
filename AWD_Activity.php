@@ -71,6 +71,7 @@
 				<td colspan="6">
 					<center>
 					<h1>BIODATA</h1>
+					<h5>PLEASE USE CAPITAL LETTERS</h5>
 					</center>
 						<tr>
 							<td>
@@ -79,12 +80,12 @@
 						</tr>
 						<tr>
 							<td>
-								<h4>Present Address: <input type="text" name="Street" placeholder="Street"> <input type="text" name="Purok" placeholder="Purok"> <input type="text" name="Brgy" placeholder="Barangay"> <input type="text" name="Cmun" placeholder="City/Municipality"> <input type="text" name="Province" placeholder="Province"></h4>
+								<h4>Present Address: <input type="text" name="Street1" placeholder="Street"> <input type="text" name="Purok1" placeholder="Purok"> <input type="text" name="Brgy1" placeholder="Barangay"> <input type="text" name="Cmun1" placeholder="City/Municipality"> <input type="text" name="Province1" placeholder="Province"></h4>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<h4>Permanent Address: <input type="text" name="Street1" placeholder="Street"> <input type="text" name="Purok1" placeholder="Purok"> <input type="text" name="Brgy1" placeholder="Barangay"> <input type="text" name="Cmun1" placeholder="City/Municipality"> <input type="text" name="Province1" placeholder="Province"></h4>
+								<h4>Permanent Address: <input type="text" name="Street2" placeholder="Street"> <input type="text" name="Purok2" placeholder="Purok"> <input type="text" name="Brgy2" placeholder="Barangay"> <input type="text" name="Cmun2" placeholder="City/Municipality"> <input type="text" name="Province2" placeholder="Province"></h4>
 							</td>
 						</tr>
 						<tr>
@@ -104,7 +105,7 @@
 						</tr>
 						<tr>
 							<td>
-								<h4>Place of Birth: <input type="text" name="Cmun3" placeholder="City/Municipality"> <input type="text" name="Province3" placeholder="Province">
+								<h4>Place of Birth: <input type="text" name="Cmun4" placeholder="City/Municipality"> <input type="text" name="Province4" placeholder="Province">
 								</h4>
 							</td>							
 						</tr>
@@ -120,7 +121,7 @@
 						</tr>
 						<tr>
 							<td>
-								<h4>Address: <input type="text" name="Street2" placeholder="Street"> <input type="text" name="Purok2" placeholder="Purok"> <input type="text" name="Brgy2" placeholder="Barangay"> <input type="text" name="Cmun3" placeholder="City/Municipality"> <input type="text" name="Province2" placeholder="Province"></h4>
+								<h4>Address: <input type="text" name="Street3" placeholder="Street"> <input type="text" name="Purok3" placeholder="Purok"> <input type="text" name="Brgy3" placeholder="Barangay"> <input type="text" name="Cmun3" placeholder="City/Municipality"> <input type="text" name="Province3" placeholder="Province"></h4>
 							</td>
 						</tr>
 						<tr>
@@ -134,6 +135,7 @@
 
 									Age: 
 									<select name="Age">
+										<option ></option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -248,21 +250,21 @@
 						<tr>
 							<td>
 								<h4>Elementary: <input type="text" name="Elem" placeholder="Binmeckeg Elementary School">
-									Year Graduated: <input type="text" name="YGraduate" placeholder="2010-2011">
+									Year Graduated: <input type="text" name="YGraduate1" placeholder="2010-2011">
 								</h4>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<h4>High School: <input type="text" name="HSchool" placeholder="Don Amadeo Perez NHS">
-									Year Graduated: <input type="text" name="YGraduate" placeholder="2016-2017">
+									Year Graduated: <input type="text" name="YGraduate2" placeholder="2016-2017">
 								</h4>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<h4>College: <input type="text" name="College" placeholder="Urdaneta CIty University">
-									Year Graduated: <input type="text" name="YGraduate" placeholder="2021-2022">
+									Year Graduated: <input type="text" name="YGraduate3" placeholder="2021-2022">
 								</h4>
 							</td>
 						</tr>
@@ -284,6 +286,7 @@
 								<center><button name="SUBMIT">SUBMIT</button></center>
 							</td>
 						</tr>
+
 					
 						
 		</table>
@@ -295,26 +298,204 @@
 <?php
 	if (isset($_POST['SUBMIT'])) {
 		# code...
+		//get all the input first 
 		//for the name of the user
 		$LN=$_POST['Lname'];
 		$FN=$_POST['Fname'];
 		$MN=$_POST['Mname'];
 
 		//for the present address
-		$Street=$_POST['Street'];
-		$Purok=$_POST['Purok'];
-		$Cmun1=$_POST['Cmun1'];
-		$Province1=$_POST['Province1'];
+		$Street=$_POST['Street1'];
+		$Purok=$_POST['Purok1'];
+		$Brgy=$_POST['Brgy1'];
+		$Cmun=$_POST['Cmun1'];
+		$Province=$_POST['Province1'];
+
+		//for the permanent address
+		$Street1=$_POST['Street2'];
+		$Purok1=$_POST['Purok2'];
+		$Brgy1=$_POST['Brgy2'];
+		$Cmun1=$_POST['Cmun2'];
+		$Province1=$_POST['Province2'];
+
+		//Date of Birth 
+		$Dbirth=$_POST['Dbirth'];
+		//Civil Status
+		$CivilStatus=$_POST['CivilStatus'];
+		//Citizenship
+		$Citizenship=$_POST['Citizenship'];
+		//Place of Birth
+		$Cmun4=$_POST['Cmun4'];
+		$Province4=$_POST['Province4'];
+		//Name OF parents
+		//Father
+		$Lname2=$_POST['Lname2'];
+		$Fname2=$_POST['Fname2'];
+		$Mname2=$_POST['Mname2'];
+		//Mother
+		$Lname3=$_POST['Lname3'];
+		$Fname3=$_POST['Fname3'];
+		$Mname3=$_POST['Mname3'];
 		
-		
-		
+		//Address
+		$Street3=$_POST['Street3'];
+		$Purok3=$_POST['Purok3'];
+		$Brgy3=$_POST['Brgy3'];
+		$Cmun3=$_POST['Cmun3'];
+		$Province3=$_POST['Province3'];
+		//Language or Dialects Spoken
+		$Dialect=$_POST['Dialect'];
+		//Person to be notified in case of emergency
+		$EPerson=$_POST['EPerson'];
+		//Religion
+		$Religion=$_POST['Religion'];
+		//Age
+		$Age=$_POST['Age'];
+		//Weight and Height
+		$Weight=$_POST['Weight'];
+		$Height=$_POST['Height'];
+
+		//EDUCATIONAL BACKGROUND
+		//ELEMENTARY
+		$Elem=$_POST['Elem'];
+		$YGraduate1=$_POST['YGraduate1'];
+		//HIGH SCHOOL
+		$HSchool=$_POST['HSchool'];
+		$YGraduate2=$_POST['YGraduate2'];
+		//COLLEGE
+		$College=$_POST['College'];
+		$YGraduate3=$_POST['YGraduate3'];
+
+		//COURSE
+		$Course=$_POST['Course'];
+		//SKILLS
+		$Skills=$_POST['Skills'];
+
+		//OUTPUT PART
+	echo "
+		<br><br>
+		<center>
+		<table>
+			<tr>
+				<td>
+					<h4> Name: $LN, $FN, $MN </h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4> Present Address: $Street $Purok $Brgy, $Cmun, $Province </h4>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4> Permanent Address: $Street1 $Purok1 $Brgy1, $Cmun1, $Province1 </h4>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4> Date Of Birth: $Dbirth 
+						  Civil Status: $CivilStatus
+						  Citizenship: $Citizenship
+					   	  Place Of Birth: $Cmun4 $Province4
+
+					</h4>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Father's Name: $Lname2, $Fname2, $Mname2</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Mother's Name: $Lname3, $Fname3, $Mname3</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Address: $Street3 $Purok3 $Brgy3, $Cmun3, $Province3</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Language or Dialects Spoken: $Dialect
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Person to be notified in case of emergency: $EPerson</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4> Religion: $Religion
+						 Age: $Age
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4> Weight: $Weight
+						 Height: $Height
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>EDUCATIONAL BACKGROUND</h3>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>ELEMENTARY: $Elem
+						Year Graduated: $YGraduate1
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>HIGH SCHOOL: $HSchool
+						Year Graduated: $YGraduate2
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>COLLEGE: $College
+						Year Graduated: $YGraduate3
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>COURSE: $Course</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>SKILLS: $Skills</h4>
+				</td>
+			</tr>
+
+			
+			
 
 
+
+
+		</table>
+		</center>
+
+	";
 	}
-
-
-
+	
+	
 
   ?>
+
 </body>
 </html>
